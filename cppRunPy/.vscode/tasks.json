@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: cpp.exe build active file",
+			"command": "D:\\msys64\\mingw64\\bin\\g++.exe",//must be g++.exe
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g","${file}",//active file current. -g must concat ${file}
+				"-o",//mean output, it must concat next
+				"${fileDirname}\\${fileBasenameNoExtension}.exe",//output exe of name
+				"-ID:\\Program Files\\Python37\\include",//external headr file
+				"-LD:\\Program Files\\Python37\\libs",//external librarys file
+				"-lpython37",//link file
+			],
+			"options": {
+				"cwd": "${fileDirname}"//current path to execute command
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: D:\\msys64\\mingw64\\bin\\g++.exe"//must be g++.exe
+		}
+	]
+}
